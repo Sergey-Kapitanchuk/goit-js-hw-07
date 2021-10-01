@@ -13,9 +13,9 @@ const buttonRemoveBtn = document.querySelector('[data-action="increment"]');
 
 
 
-const increment = () => counterValue.textContent ++;
+const increment = () => counterValue.textContent --;
 
-const decrement = () => counterValue.textContent --;
+const decrement = () => counterValue.textContent ++;
 
 
 buttonAddBtn.addEventListener(`click`, increment);

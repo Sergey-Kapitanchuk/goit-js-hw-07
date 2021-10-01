@@ -22,24 +22,17 @@ const images = [
 
 const bigUlEl = document.querySelector(`#gallery`);
 
-const values = ({url, alt}) => {
-  const liEl = document.createElement(`li`);
-  
-  const kittyEl = document.createElement(`img`);
-  kittyEl.src = url;
-  kittyEl.alt = alt;
-  kittyEl.height = 240;
-
-  liEl.append(kittyEl);
-
-  return liEl;
-};
-
-const valuesEl = images.map(values);
-  // .join(``)
 
 
-console.log(valuesEl);
+const valuesEl = images
+  .map(image => {
+    return `<li class="image__style"><img src="${image.url}" alt="${image.alt}"  height= "220"></li>
+`;
+  })
+  .join("");
 
-bigUlEl.append(...valuesEl);
-// bigUlEl.insertAdjacentHTML(`beforeend`, values);
+
+
+
+
+bigUlEl.insertAdjacentHTML(`beforeend`, valuesEl);
